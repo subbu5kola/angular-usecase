@@ -1,20 +1,21 @@
 <div>
+    <div> <h1>Employee Request Form</h1></div>
     <form [formGroup]="formData" (ngSubmit)="onSubmit(formData)">
         <div>
-            <input type="text" name="id" formControlName="id" placeholder="Employee id" />
+            <input type="text" class="element" name="id" formControlName="id" placeholder="Employee id" />
 
-            <input type="text" name="name" formControlName="name" placeholder="Employee name" />
+            <input type="text" class="element" name="name" formControlName="name" placeholder="Employee name" />
 
-            <input type="text" name="address" formControlName="address" placeholder="Employee address" />
+            <input type="text" class="element" name="address" formControlName="address" placeholder="Employee address" />
 
         </div>
         <div>
 
-            <input type="text" name="account" formControlName="account" placeholder="Employee account" />
+            <input type="text" class="element" name="account" formControlName="account" placeholder="Employee account" />
 
-            <input type="text" name="manager" formControlName="manager" placeholder="Employee manager" />
+            <input type="text" class="element" name="manager" formControlName="manager" placeholder="Employee manager" />
 
-            <button type="submit">Submit</button>
+            <button type="submit" class="element" >Submit</button>
         </div>
     </form>
 </div>
