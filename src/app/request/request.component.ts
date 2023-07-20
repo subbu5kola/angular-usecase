@@ -39,6 +39,8 @@ export class RequestComponent implements OnInit {
   onSubmit(formData: FormGroup) {
     if (this.formData.valid) {
       const empData = this.formData.value as RequestData;
+      
+      if(this.service.requestData.indexOf(formData.value)===-1)
       this.service.requestData.push(empData);
     }
   }
