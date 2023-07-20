@@ -1,54 +1,53 @@
+<div>
+    <form [formGroup]="formData" (ngSubmit)="onSubmit(formData)">
+        <div>
+            <input type="text" name="id" formControlName="id" placeholder="Employee id" />
+
+            <input type="text" name="name" formControlName="name" placeholder="Employee name" />
+
+            <input type="text" name="address" formControlName="address" placeholder="Employee address" />
+
+        </div>
+        <div>
+
+            <input type="text" name="account" formControlName="account" placeholder="Employee account" />
+
+            <input type="text" name="manager" formControlName="manager" placeholder="Employee manager" />
+
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</div>
 
 <div>
-<form [formGroup]="formData" (ngSubmit)="onSubmit(formData)">
-    <div>
-    <input type="text" name="id" formControlName="id" placeholder="Employee id" />
 
-    <input type="text" name="name" formControlName="name" placeholder="Employee name"/>
 
-    <input type="text" name="address" formControlName="address" placeholder="Employee address"/>
+    <table id="table">
 
-</div>
-<div>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>address</th>
+            <th>account</th>
+            <th>manager</th>
+            <th>status</th>
+        </tr>
 
-    <input type="text" name="account" formControlName="account" placeholder="Employee account"/>
+        <tbody *ngFor="let r of data">
 
-    <input type="text" name="manager" formControlName="manager" placeholder="Employee manager"/>
+            <tr *ngIf="r.status==='Accepted' || r.status==='Rejected'">
 
-    <button type="submit">Submit</button>
-</div>
-</form>
-</div>
+                <td>{{r.id}}</td>
+                <td>{{r.name}}</td>
+                <td>{{r.address}}</td>
+                <td>{{r.account}}</td>
+                <td>{{r.manager}}</td>
+                <td>{{r.status}}</td>
 
-<div  >
-    
-        
-<table id="table">
-   
-    <tr>
-        <th>id</th>
-        <th>name</th>
-        <th>address</th>
-        <th>account</th>
-        <th>manager</th>
-        <th>status</th>
-    </tr>
+            </tr>
+        </tbody>
 
-    <tbody *ngFor="let r of data">
 
-<tr *ngIf="r.status==='Accepted' || r.status==='Rejected'">
-    
-    <td>{{r.id}}</td>
-    <td>{{r.name}}</td>
-    <td>{{r.address}}</td>
-    <td>{{r.account}}</td>
-    <td>{{r.manager}}</td>
-    <td>{{r.status}}</td>
-
-</tr>
-    </tbody>
-
-   
-</table>
+    </table>
 
 </div>

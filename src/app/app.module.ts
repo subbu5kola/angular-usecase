@@ -10,8 +10,8 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ManagerComponent } from './manager/manager.component';
 import { RequestComponent } from './request/request.component';
-import {CommonService} from './common.service';
-import {ReactiveFormsModule} from '@angular/forms';
+import { CommonService } from './common.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [

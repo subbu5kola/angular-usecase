@@ -4,9 +4,9 @@ import { ManagerComponent } from './manager/manager.component';
 import { RequestComponent } from './request/request.component';
 
 
-const routes: Routes = [{path:'',redirectTo:'employees',pathMatch:'full'},
-{path:'employees',component:ManagerComponent},
-{path:'employee/request',component:RequestComponent},];
+const routes: Routes = [{ path: '', redirectTo: 'employees', pathMatch: 'full' },
+{ path: 'employees', component: ManagerComponent },
+{ path: 'employee/request', component: RequestComponent },];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -6,12 +6,12 @@ import { CommonService } from './common.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
-  constructor(private service:CommonService){
+export class AppComponent implements OnInit {
+  constructor(private service: CommonService) {
 
   }
-  count:number=0;
-  
+  count: number = 0;
+
   title = 'angular-usecase';
   tabs: TabItem[] = [
     {
@@ -28,14 +28,14 @@ export class AppComponent implements OnInit{
 
   ngOnInit(): void {
     this.service.addRequestCount();
-    this.service.requestCount.subscribe(count=>
-      this.count=count
-      )
+    this.service.requestCount.subscribe(count =>
+      this.count = count
+    )
   }
 
-  getCount(){
-  this.service.requestCount.subscribe(count=>
-    this.count=count
+  getCount() {
+    this.service.requestCount.subscribe(count =>
+      this.count = count
     )
   }
 }
