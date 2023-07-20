@@ -1,0 +1,38 @@
+<div class="item-container">
+    <table id="table">
+
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>address</th>
+            <th>account</th>
+            <th>manager</th>
+            <th>status</th>
+        </tr>
+
+
+
+        <tbody *ngIf="data.length>0">
+
+            <tr *ngFor="let r of data">
+                <td>{{r.id}}</td>
+                <td>{{r.name}}</td>
+                <td>{{r.address}}</td>
+                <td>{{r.account}}</td>
+                <td>{{r.manager}}</td>
+                <div *ngIf="r.status!=='Accepted' && r.status!=='Rejected' ; else approvedRecords">
+                    <button (click)="onAccept(r)">Accept</button>
+                    <button (click)="onReject(r)">Reject</button>
+                </div>
+                <ng-template #approvedRecords>
+                    <td>{{r.status}}</td>
+                </ng-template>
+            </tr>
+
+        </tbody>
+
+
+
+
+    </table>
+</div>

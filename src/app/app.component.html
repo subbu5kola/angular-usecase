@@ -1,0 +1,14 @@
+
+  <mat-toolbar color="primary">
+    Angular Usecase
+  </mat-toolbar>
+  
+  <nav mat-tab-nav-bar>
+    <a mat-tab-link *ngFor="let tabItem of tabs"  [routerLink]="tabItem.route">
+      <mat-icon>{{tabItem.icon}}</mat-icon>
+      {{tabItem.label }} <span *ngIf="tabItem.label==='Requests'">( {{count}} )</span>
+    </a>
+    
+  </nav>
+
+<router-outlet></router-outlet>
