@@ -40,7 +40,7 @@ export class RequestComponent implements OnInit {
     if (this.formData.valid) {
       const empData = this.formData.value as RequestData;
       
-      if(this.service.requestData.indexOf(formData.value)===-1)
+     if(this.service.requestData.find((f)=>f.id===formData.value.id && f.name===formData.value.name && f.manager===formData.value.manager)===undefined)
       this.service.requestData.push(empData);
     }
   }
