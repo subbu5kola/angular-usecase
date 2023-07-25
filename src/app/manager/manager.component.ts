@@ -21,13 +21,11 @@ export class ManagerComponent {
     r.status = 'Accepted';
     this.service.updateEmployeeRequest(r.id,r.requestId,r).subscribe(r=>{
     });
-    this.service.loadData();
   }
 
   onReject(r: RequestData) {
     r.status = 'Rejected';
     this.service.updateEmployeeRequest(r.id,r.requestId,r).subscribe(r=>{
     });
-    this.service.loadData();
   }
 }
