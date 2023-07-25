@@ -12,6 +12,7 @@ import { ManagerComponent } from './manager/manager.component';
 import { RequestComponent } from './request/request.component';
 import { CommonService } from './common.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatToolbarModule,
     MatIconModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [CommonService],
   bootstrap: [AppComponent]

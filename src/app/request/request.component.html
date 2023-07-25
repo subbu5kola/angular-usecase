@@ -31,18 +31,20 @@
             <th>address</th>
             <th>account</th>
             <th>manager</th>
+            <th>requestId</th>
             <th>status</th>
         </tr>
 
-        <tbody *ngFor="let r of data">
+        <tbody *ngFor="let r of data$ | async">
 
-            <tr *ngIf="r.status==='Accepted' || r.status==='Rejected'">
+            <tr>
 
                 <td>{{r.id}}</td>
                 <td>{{r.name}}</td>
                 <td>{{r.address}}</td>
                 <td>{{r.account}}</td>
                 <td>{{r.manager}}</td>
+                <td>{{r.requestId}}</td>
                 <td>{{r.status}}</td>
 
             </tr>

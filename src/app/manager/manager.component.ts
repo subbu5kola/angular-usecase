@@ -2,38 +2,32 @@ import { Component, OnInit } from '@angular/core';
 import { CommonService } from '../common.service';
 import { RequestData } from '../request-data';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-manager',
   templateUrl: './manager.component.html',
   styleUrls: ['./manager.component.css']
 })
-export class ManagerComponent implements OnInit {
+export class ManagerComponent {
 
   constructor(private service: CommonService, private router: Router) {
 
   }
-
-  data: RequestData[] = [];
-  ngOnInit(): void {
-    this.data = this.service.requestData;
-  }
+  data$=this.service.getAllEmployeeRequest();
+  
 
   onAccept(r: RequestData) {
-    let row = this.data.indexOf(r);
-    if (row !== -1)
-      this.data[row].status = 'Accepted';
-    console.log(this.data[row]);
-    this.service.addRequestCount();
-    this.router.navigateByUrl('/employees');
+    r.status = 'Accepted';
+    this.service.updateEmployeeRequest(r.id,r.requestId,r).subscribe(r=>{
+    });
+    this.service.loadData();
   }
 
   onReject(r: RequestData) {
-    let row = this.data.indexOf(r);
-    if (row !== -1)
-      this.data[row].status = 'Rejected';
-    console.log(this.data[row]);
-    this.service.addRequestCount();
-    this.router.navigateByUrl('/employees');
+    r.status = 'Rejected';
+    this.service.updateEmployeeRequest(r.id,r.requestId,r).subscribe(r=>{
+    });
+    this.service.loadData();
   }
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonService } from './common.service';
+import { Observable } from 'rxjs';
+import { RequestData } from './request-data';
 
 @Component({
   selector: 'app-root',
@@ -26,18 +28,16 @@ export class AppComponent implements OnInit {
     },
   ];
 
-  ngOnInit(): void {
-    this.service.addRequestCount();
-    this.service.requestCount.subscribe(count =>
-      this.count = count
-    )
+  ngOnInit(){
+  this.service.loadData();
   }
 
-  getCount() {
-    this.service.requestCount.subscribe(count =>
-      this.count = count
-    )
+  getCount():number {
+    this.service.requestData.subscribe(r=>this.count=r.length);
+    return this.count;
   }
+  
+
 }
 
 export interface TabItem {

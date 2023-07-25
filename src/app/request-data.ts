@@ -4,5 +4,6 @@ export interface RequestData {
     address: string,
     account: number,
     manager: string,
-    status: string
+    status: string,
+    requestId:number
 }
